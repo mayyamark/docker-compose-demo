@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000" # default port for the Flask web server
+    volumes:
+      - .:/code # mounts the project directory, allowing to modify the code on the fly, without having to rebuild the image
+    environment:
+      FLASK_ENV: development # tells flask run to run in development mode and reload the code on change
+  redis:
+    image: "redis:alpine"
