@@ -7,6 +7,6 @@ services:
     volumes:
       - .:/code # mounts the project directory, allowing to modify the code on the fly, without having to rebuild the image
     environment:
-      FLASK_ENV: development # tells flask run to run in development mode and reload the code on change
+      FLASK_ENV: "${FLASK_ENV}" # tells flask run to run in development mode and reload the code on change
   redis:
     image: "redis:alpine"
